@@ -18,7 +18,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20.x"
-          cache: "pnpm"
+      - name: Authorize npm
+        run: npm adduser
 
       - run: pnpm install --frozen-lockfile
       - name: Create Release Pull Request or Publish
